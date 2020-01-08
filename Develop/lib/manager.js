@@ -9,6 +9,15 @@ class Manager extends Employee{
     getOfficeNumber(){
         return this.officeNumber;
     }
+    generateManagerCard(){
+        return `<div style = "width: 45vw; background-color: red;">
+            <h1>${this.name}</h1>
+            <h2>Role: Manager</h2>
+            <h2>${this.email}</h2>
+            <h2>office number: ${this.officeNumber}</h2>
+            <h2>Employee id: ${this.id}</h2>
+        </div>`
+    }
 }
 
 module.exports = Manager;
