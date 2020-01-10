@@ -1,4 +1,4 @@
-function generateHTML(data) {
+function generateHTML() {
   
     return `<!DOCTYPE html>
     <html lang="en">
@@ -20,3 +20,5 @@ function generateHTML(data) {
     </body>
     </html>`
 }
+
+module.exports = generateHTML;
