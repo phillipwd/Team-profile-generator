@@ -15,10 +15,8 @@ function generateHTML() {
             <h3>employee 2</h3>
         </div>
         <div style = "display: flex; justify-content: center; text-align: center; flex-wrap: wrap;" id = "card">
-            //put cards here
-        </div>
-    </body>
-    </html>`
+            `
+
 }
 
 module.exports = generateHTML;
