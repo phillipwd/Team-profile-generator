@@ -1,6 +1,4 @@
 function generateManagerCard(employee){
-    // console.log(employee);
-    
     return `<div style = "width: 45vw; background-color: red;">
         <h1>${employee.name}</h1>
         <h2>Role: Manager</h2>

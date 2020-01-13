@@ -1,10 +1,9 @@
 const inquirer = require("inquirer");
 const html = require("./templates/generate-main");
 const fs = require("fs");
-const axios = require("axios");
+// const axios = require("axios");
 const util = require("util");
 const writeFileAsync = util.promisify(fs.writeFile);
-// const appFileAsync = util.promisify(fs.appendFile);
 const employee = require("./lib/Employee");
 const manager = require("./templates/genManagerCard");
 const engineer = require("./templates/genEngineerCard");
@@ -28,12 +27,6 @@ const foot = `      </div>
 </html>`
 
 
-// function writeFileAsync(fileName, data) {
-//     fs.writeFile(fileName, data, function(err){
-//         if(err) throw(err);
-//     })
-// };
-
 function appFile(filename, data){
     fs.appendFile(filename, data, function(err){
         if(err) throw err;
@@ -50,22 +43,16 @@ async function genCards(){
         try{
             if(element.role === "manager"){
                 card = manager(element);//generates card with manager data based on role. (works)
-                // console.log("logging manager");
-                
-                // appFile("index.html", card);
             }
             else if(element.role === "engineer"){
                 card = engineer(element);//generates card with engineer data based on role. (works)
-                // appFile("index.html",card);
             }
             else{
                 card = intern(element);//generates card with intern data based on role. (works)
-                // appFile("index.html",card);
             }
             appFile("index.html", card);
         }catch(err){
-            console.log(err);
-            
+            console.log(err);    
         };
     });
 }
